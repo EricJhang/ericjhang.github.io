@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://ericjhang.github.io/categories/index.html</loc>
+    
+    <lastmod>2018-03-14T13:37:03.656Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ericjhang.github.io/tags/index.html</loc>
+    
+    <lastmod>2018-03-14T13:36:51.313Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://ericjhang.github.io/2018/03/13/Python-%E7%92%B0%E5%A2%83%E5%AE%89%E8%A3%9D/</loc>
     
     <lastmod>2018-03-14T12:25:33.918Z</lastmod>
@@ -26,20 +40,6 @@
     <loc>https://ericjhang.github.io/2018/03/13/python-%E4%B8%80%E5%B0%8F%E6%99%82%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B/</loc>
     
     <lastmod>2018-03-14T11:50:46.492Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ericjhang.github.io/tags/index.html</loc>
-    
-    <lastmod>2018-03-14T09:21:27.824Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ericjhang.github.io/categories/index.html</loc>
-    
-    <lastmod>2018-03-14T09:13:55.569Z</lastmod>
     
   </url>
   
