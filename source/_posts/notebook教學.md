@@ -7,6 +7,7 @@ tags:
 categories:
   - python  
 date: 2018-03-13 19:51:22
+keywords: ipython notebook,ipython notebook安裝教學,ipython 安裝教學,jupyter 安裝 
 ---
 
 

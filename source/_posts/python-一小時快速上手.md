@@ -6,6 +6,7 @@ tags:
 categories:
   - python
 date: 2018-03-13 15:55:55
+keywords: python,Python 快速上手,python 一小時快速上手,Python 一小時,python 教學,一小時學會 Python,Python初學
 ---
 
 
