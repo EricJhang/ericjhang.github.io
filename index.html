@@ -232,6 +232,185 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/14/heroku安裝使用教學/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Eric Jhang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/IMG_5110.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="科技的旅程">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/14/heroku安裝使用教學/" itemprop="url">Heroku安裝使用教學</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-03-14T15:48:52+08:00">
+                2018-03-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Heroku/" itemprop="url" rel="index">
+                    <span itemprop="name">Heroku</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/03/14/heroku安裝使用教學/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/03/14/heroku安裝使用教學/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Heroku 是一個平台即服務(PaaS)，各個開發者或是開發團隊可以自行在Heroku平台開發&amp;佈署各種網站。<br>好處是可以減少維護管理系統底層的成本，也透過簡單的介面來調整所需要的硬體設備等級或是資源。<br>PaaS的平台不少，但是Heroku操作相當簡單，可以讓開發者初期專心的開發程式，而不用煩惱管理機器或是其他維護。<br>當然如果網站隨著上線後流量變大，那麼Heroku就不一定適合了，不管如何Heroku 對於早期的開發者是非常適合的。</p>
+<h2 id="Heroku-安裝"><a href="#Heroku-安裝" class="headerlink" title="Heroku 安裝"></a>Heroku 安裝</h2><p>首先先到Heroko 申請一個帳號<br><a href="https://www.heroku.com/" target="_blank" rel="noopener">網站:https://www.heroku.com/</a> </p>
+<h2 id="申請Heroku帳號"><a href="#申請Heroku帳號" class="headerlink" title="申請Heroku帳號"></a>申請Heroku帳號</h2><p>目前申請Heroku 帳號是免費的，填寫一些基本資料即可申請</p>
+<h2 id="免費帳號的限制"><a href="#免費帳號的限制" class="headerlink" title="免費帳號的限制"></a>免費帳號的限制</h2><p>Heroku 免費帳號的限制對開發者比較有影響的就是</p>
+<ul>
+<li>30分鐘沒有使用會進入睡眠狀態，之後要開啟需要等待一些時間才能運作。</li>
+<li>512MB的儲存空間，這空間對開發者開發一些小專案來說夠用了。</li>
+<li>1個dyno。dyno是運行和響應請求的應用程序的實例。要執行網站就至少需要一個dyno</li>
+</ul>
+<h2 id="安裝Heroku-Cli"><a href="#安裝Heroku-Cli" class="headerlink" title="安裝Heroku Cli"></a>安裝Heroku Cli</h2><p>Heroko Cli是一個用來管理、創建、提交等命令的工具。<br><a href="https://devcenter.heroku.com/articles/heroku-cli" target="_blank" rel="noopener">Heroko Cli 下載網址</a></p>
+<img src="/images/heroku_cli.PNG" width="800" height="600" title="Heroko下載頁面">
+<p>看各位讀者自己依照作業系統選擇下載，下載後直接進行安裝即可<br>安裝後，同時也會自動的加到環境變數中。<br>安裝完成後，開啟命令提示字元來測試一下，鍵入以下指令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">heroku -h</span><br></pre></td></tr></table></figure>
+<p>如果出現以下頁面，電腦重開機就可以了<br><img src="/images/heroku_cli_install_error.PNG" width="800" height="600" title="Heroko not found"><br>如果讀者不想重開機，那鍵入以下指令(Windows 適用)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> PATH=%PATH%;C:\Program Files\Heroku\bin <span class="comment">#Heroku安裝的路徑</span></span><br></pre></td></tr></table></figure>
+<p>再輸入一次 heroku -h，看到以下畫面就是成功了!!<br><img src="/images/heroku_cli_install_sucess.PNG" width="800" height="600" title="Heroko Sucess"></p>
+<h2 id="Heroku-使用教學"><a href="#Heroku-使用教學" class="headerlink" title="Heroku 使用教學"></a>Heroku 使用教學</h2><p>在命令提示字元下鍵入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">heroku login</span><br></pre></td></tr></table></figure></p>
+<p>出現以下畫面，輸入剛剛申請的Heroku帳號、密碼，這樣後在git push 之後就不用再次輸入了。<br><img src="/images/heroku_login.PNG" width="800" height="600" title="Heroko Login"></p>
+<p>再來進入正題，我們要在Heroku開設一個應用程式(Instance)，可以透過以下指令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">heroku create name</span><br></pre></td></tr></table></figure></p>
+<p>name 是你指定應用程式名子，也可以不指定，Heroku 會隨機產生一組名稱</p>
+<p>其餘指令可以參考<a href="https://devcenter.heroku.com/articles/heroku-cli-commands" target="_blank" rel="noopener">Heroko Cli 指令</a><br>後面要佈署網站，要用git 指令來做。<br>Git 教學可以參考這篇 <a href="https://backlog.com/git-tutorial/tw/intro/intro2_1.html" target="_blank" rel="noopener">連猴子都能懂得Git入門指南</a></p>
+<h2 id="建立本地端存放程式碼"><a href="#建立本地端存放程式碼" class="headerlink" title="建立本地端存放程式碼"></a>建立本地端存放程式碼</h2><p>再來先在本地端建立一個資料夾，專門用來存放程式碼，後續也從這資料夾直接git push 到Heroku<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir heroku_workplace</span><br><span class="line"><span class="built_in">cd</span>  heroku_workplace</span><br><span class="line">git init </span><br><span class="line">heroku git:remote -a &#123;HEROKU_APP_NAME&#125;</span><br></pre></td></tr></table></figure></p>
+<p>{HEROKU_APP_NAME}是你指定的應用程式名子<br>將開發好的程式碼放入這個資料夾後，鍵入指令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">"Init"</span></span><br><span class="line">git push heroku master</span><br></pre></td></tr></table></figure></p>
+<p>每次更新完程式，要重新推上Heroku，就用上述步驟重做一次即可。</p>
+<h2 id="檢查的日誌-log"><a href="#檢查的日誌-log" class="headerlink" title="檢查的日誌(log)"></a>檢查的日誌(log)</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">heroku logs --tail --app &#123;HEROKU_APP_NAME&#125;</span><br></pre></td></tr></table></figure>
+<p>{HEROKU_APP_NAME}是你指定的應用程式名子<br>–tail :是持續印出log<br>–app {HEROKU_APP_NAME}: 是指定app</p>
+<p>到這邊 Heroku 安裝跟使用已經完成，下一篇是line bot<br>在下一篇line bot 會用到Heroku，並佈署喔</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/13/notebook教學/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -780,7 +959,7 @@ int(variable_x) == variable_x 如果為True，表示使用者輸入的是整數�
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">文章</span>
                 </a>
               </div>
@@ -791,7 +970,7 @@ int(variable_x) == variable_x 如果為True，表示使用者輸入的是整數�
               
               <div class="site-state-item site-state-categories">
                 
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">分類</span>
                 
               </div>
@@ -802,7 +981,7 @@ int(variable_x) == variable_x 如果為True，表示使用者輸入的是整數�
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">標籤</span>
                 
               </div>
