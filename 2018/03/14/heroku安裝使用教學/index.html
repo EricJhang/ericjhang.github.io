@@ -89,22 +89,22 @@
 <meta property="og:site_name" content="科技的旅程">
 <meta property="og:description" content="前言Heroku 是一個平台即服務(PaaS)，各個開發者或是開發團隊可以自行在Heroku平台開發&amp;amp;佈署各種網站。好處是可以減少維護管理系統底層的成本，也透過簡單的介面來調整所需要的硬體設備等級或是資源。PaaS的平台不少，但是Heroku操作相當簡單，可以讓開發者初期專心的開發程式，而不用煩惱管理機器或是其他維護。當然如果網站隨著上線後流量變大，那麼Heroku就不一定適合了，不管如何">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:image" content="https://ericjhang.github.io/images/heroku_cli.PNG">
-<meta property="og:image" content="https://ericjhang.github.io/images/heroku_cli_install_error.PNG">
-<meta property="og:image" content="https://ericjhang.github.io/images/heroku_cli_install_sucess.PNG">
-<meta property="og:image" content="https://ericjhang.github.io/images/heroku_login.PNG">
+<meta property="og:image" content="https://ericjhang.github.io/ericjhang.github.io/images/heroku_cli.PNG">
+<meta property="og:image" content="https://ericjhang.github.io/ericjhang.github.io/images/heroku_cli_install_error.PNG">
+<meta property="og:image" content="https://ericjhang.github.io/ericjhang.github.io/images/heroku_cli_install_sucess.PNG">
+<meta property="og:image" content="https://ericjhang.github.io/ericjhang.github.io/images/heroku_login.PNG">
 <meta property="og:updated_time" content="2018-03-14T07:48:52.602Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Heroku安裝使用教學">
 <meta name="twitter:description" content="前言Heroku 是一個平台即服務(PaaS)，各個開發者或是開發團隊可以自行在Heroku平台開發&amp;amp;佈署各種網站。好處是可以減少維護管理系統底層的成本，也透過簡單的介面來調整所需要的硬體設備等級或是資源。PaaS的平台不少，但是Heroku操作相當簡單，可以讓開發者初期專心的開發程式，而不用煩惱管理機器或是其他維護。當然如果網站隨著上線後流量變大，那麼Heroku就不一定適合了，不管如何">
-<meta name="twitter:image" content="https://ericjhang.github.io/images/heroku_cli.PNG">
+<meta name="twitter:image" content="https://ericjhang.github.io/ericjhang.github.io/images/heroku_cli.PNG">
 
 
 
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/',
+    root: 'https://ericjhang.github.io/',
     scheme: 'Pisces',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
@@ -139,6 +139,15 @@
 
 
 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-115784236-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
 
 
 
@@ -161,7 +170,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="https://ericjhang.github.io/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">科技的旅程</span>
         <span class="logo-line-after"><i></i></span>
@@ -370,14 +379,14 @@
 <li>1個dyno。dyno是運行和響應請求的應用程序的實例。要執行網站就至少需要一個dyno</li>
 </ul>
 <h2 id="安裝Heroku-Cli"><a href="#安裝Heroku-Cli" class="headerlink" title="安裝Heroku Cli"></a>安裝Heroku Cli</h2><p>Heroko Cli是一個用來管理、創建、提交等命令的工具。<br><a href="https://devcenter.heroku.com/articles/heroku-cli" target="_blank" rel="noopener">Heroko Cli 下載網址</a></p>
-<img src="/images/heroku_cli.PNG" width="800" height="600" title="Heroko下載頁面">
+<img src="https:/ericjhang.github.io/images/heroku_cli.PNG" width="800" height="600" title="Heroko下載頁面">
 <p>看各位讀者自己依照作業系統選擇下載，下載後直接進行安裝即可<br>安裝後，同時也會自動的加到環境變數中。<br>安裝完成後，開啟命令提示字元來測試一下，鍵入以下指令</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">heroku -h</span><br></pre></td></tr></table></figure>
-<p>如果出現以下頁面，電腦重開機就可以了<br><img src="/images/heroku_cli_install_error.PNG" width="800" height="600" title="Heroko not found"><br>如果讀者不想重開機，那鍵入以下指令(Windows 適用)</p>
+<p>如果出現以下頁面，電腦重開機就可以了<br><img src="https:/ericjhang.github.io/images/heroku_cli_install_error.PNG" width="800" height="600" title="Heroko not found"><br>如果讀者不想重開機，那鍵入以下指令(Windows 適用)</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> PATH=%PATH%;C:\Program Files\Heroku\bin <span class="comment">#Heroku安裝的路徑</span></span><br></pre></td></tr></table></figure>
-<p>再輸入一次 heroku -h，看到以下畫面就是成功了!!<br><img src="/images/heroku_cli_install_sucess.PNG" width="800" height="600" title="Heroko Sucess"></p>
+<p>再輸入一次 heroku -h，看到以下畫面就是成功了!!<br><img src="https:/ericjhang.github.io/images/heroku_cli_install_sucess.PNG" width="800" height="600" title="Heroko Sucess"></p>
 <h2 id="Heroku-使用教學"><a href="#Heroku-使用教學" class="headerlink" title="Heroku 使用教學"></a>Heroku 使用教學</h2><p>在命令提示字元下鍵入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">heroku login</span><br></pre></td></tr></table></figure></p>
-<p>出現以下畫面，輸入剛剛申請的Heroku帳號、密碼，這樣後在git push 之後就不用再次輸入了。<br><img src="/images/heroku_login.PNG" width="800" height="600" title="Heroko Login"></p>
+<p>出現以下畫面，輸入剛剛申請的Heroku帳號、密碼，這樣後在git push 之後就不用再次輸入了。<br><img src="https:/ericjhang.github.io/images/heroku_login.PNG" width="800" height="600" title="Heroko Login"></p>
 <p>再來進入正題，我們要在Heroku開設一個應用程式(Instance)，可以透過以下指令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">heroku create name</span><br></pre></td></tr></table></figure></p>
 <p>name 是你指定應用程式名子，也可以不指定，Heroku 會隨機產生一組名稱</p>
 <p>其餘指令可以參考<a href="https://devcenter.heroku.com/articles/heroku-cli-commands" target="_blank" rel="noopener">Heroko Cli 指令</a><br>後面要佈署網站，要用git 指令來做。<br>Git 教學可以參考這篇 <a href="https://backlog.com/git-tutorial/tw/intro/intro2_1.html" target="_blank" rel="noopener">連猴子都能懂得Git入門指南</a></p>
