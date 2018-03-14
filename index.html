@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-tw">
+<html class="theme-next pisces use-motion" lang="zh-tw">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -96,7 +96,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Pisces',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -336,35 +336,15 @@
       
         
           
-            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Heroku 是一個平台即服務(PaaS)，各個開發者或是開發團隊可以自行在Heroku平台開發&amp;佈署各種網站。<br>好處是可以減少維護管理系統底層的成本，也透過簡單的介面來調整所需要的硬體設備等級或是資源。<br>PaaS的平台不少，但是Heroku操作相當簡單，可以讓開發者初期專心的開發程式，而不用煩惱管理機器或是其他維護。<br>當然如果網站隨著上線後流量變大，那麼Heroku就不一定適合了，不管如何Heroku 對於早期的開發者是非常適合的。</p>
-<h2 id="Heroku-安裝"><a href="#Heroku-安裝" class="headerlink" title="Heroku 安裝"></a>Heroku 安裝</h2><p>首先先到Heroko 申請一個帳號<br><a href="https://www.heroku.com/" target="_blank" rel="noopener">網站:https://www.heroku.com/</a> </p>
-<h2 id="申請Heroku帳號"><a href="#申請Heroku帳號" class="headerlink" title="申請Heroku帳號"></a>申請Heroku帳號</h2><p>目前申請Heroku 帳號是免費的，填寫一些基本資料即可申請</p>
-<h2 id="免費帳號的限制"><a href="#免費帳號的限制" class="headerlink" title="免費帳號的限制"></a>免費帳號的限制</h2><p>Heroku 免費帳號的限制對開發者比較有影響的就是</p>
-<ul>
-<li>30分鐘沒有使用會進入睡眠狀態，之後要開啟需要等待一些時間才能運作。</li>
-<li>512MB的儲存空間，這空間對開發者開發一些小專案來說夠用了。</li>
-<li>1個dyno。dyno是運行和響應請求的應用程序的實例。要執行網站就至少需要一個dyno</li>
-</ul>
-<h2 id="安裝Heroku-Cli"><a href="#安裝Heroku-Cli" class="headerlink" title="安裝Heroku Cli"></a>安裝Heroku Cli</h2><p>Heroko Cli是一個用來管理、創建、提交等命令的工具。<br><a href="https://devcenter.heroku.com/articles/heroku-cli" target="_blank" rel="noopener">Heroko Cli 下載網址</a></p>
-<img src="/images/heroku_cli.PNG" width="800" height="600" title="Heroko下載頁面">
-<p>看各位讀者自己依照作業系統選擇下載，下載後直接進行安裝即可<br>安裝後，同時也會自動的加到環境變數中。<br>安裝完成後，開啟命令提示字元來測試一下，鍵入以下指令</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">heroku -h</span><br></pre></td></tr></table></figure>
-<p>如果出現以下頁面，電腦重開機就可以了<br><img src="/images/heroku_cli_install_error.PNG" width="800" height="600" title="Heroko not found"><br>如果讀者不想重開機，那鍵入以下指令(Windows 適用)</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> PATH=%PATH%;C:\Program Files\Heroku\bin <span class="comment">#Heroku安裝的路徑</span></span><br></pre></td></tr></table></figure>
-<p>再輸入一次 heroku -h，看到以下畫面就是成功了!!<br><img src="/images/heroku_cli_install_sucess.PNG" width="800" height="600" title="Heroko Sucess"></p>
-<h2 id="Heroku-使用教學"><a href="#Heroku-使用教學" class="headerlink" title="Heroku 使用教學"></a>Heroku 使用教學</h2><p>在命令提示字元下鍵入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">heroku login</span><br></pre></td></tr></table></figure></p>
-<p>出現以下畫面，輸入剛剛申請的Heroku帳號、密碼，這樣後在git push 之後就不用再次輸入了。<br><img src="/images/heroku_login.PNG" width="800" height="600" title="Heroko Login"></p>
-<p>再來進入正題，我們要在Heroku開設一個應用程式(Instance)，可以透過以下指令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">heroku create name</span><br></pre></td></tr></table></figure></p>
-<p>name 是你指定應用程式名子，也可以不指定，Heroku 會隨機產生一組名稱</p>
-<p>其餘指令可以參考<a href="https://devcenter.heroku.com/articles/heroku-cli-commands" target="_blank" rel="noopener">Heroko Cli 指令</a><br>後面要佈署網站，要用git 指令來做。<br>Git 教學可以參考這篇 <a href="https://backlog.com/git-tutorial/tw/intro/intro2_1.html" target="_blank" rel="noopener">連猴子都能懂得Git入門指南</a></p>
-<h2 id="建立本地端存放程式碼"><a href="#建立本地端存放程式碼" class="headerlink" title="建立本地端存放程式碼"></a>建立本地端存放程式碼</h2><p>再來先在本地端建立一個資料夾，專門用來存放程式碼，後續也從這資料夾直接git push 到Heroku<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir heroku_workplace</span><br><span class="line"><span class="built_in">cd</span>  heroku_workplace</span><br><span class="line">git init </span><br><span class="line">heroku git:remote -a &#123;HEROKU_APP_NAME&#125;</span><br></pre></td></tr></table></figure></p>
-<p>{HEROKU_APP_NAME}是你指定的應用程式名子<br>將開發好的程式碼放入這個資料夾後，鍵入指令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">"Init"</span></span><br><span class="line">git push heroku master</span><br></pre></td></tr></table></figure></p>
-<p>每次更新完程式，要重新推上Heroku，就用上述步驟重做一次即可。</p>
-<h2 id="檢查的日誌-log"><a href="#檢查的日誌-log" class="headerlink" title="檢查的日誌(log)"></a>檢查的日誌(log)</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">heroku logs --tail --app &#123;HEROKU_APP_NAME&#125;</span><br></pre></td></tr></table></figure>
-<p>{HEROKU_APP_NAME}是你指定的應用程式名子<br>–tail :是持續印出log<br>–app {HEROKU_APP_NAME}: 是指定app</p>
-<p>到這邊 Heroku 安裝跟使用已經完成，下一篇是line bot<br>在下一篇line bot 會用到Heroku，並佈署喔</p>
-
-          
+          前言Heroku 是一個平台即服務(PaaS)，各個開發者或是開發團隊可以自行在Heroku平台開發&amp;佈署各種網站。好處是可以減少維護管理系統底層的成本，也透過簡單的介面來調整所需要的硬體設備等級或是資源。PaaS的平台不少，但是Heroku操作相當簡單，可以讓開發者初期專心的開發程式，而不
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/14/heroku安裝使用教學/#more" rel="contents">
+              閱讀全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -515,21 +495,16 @@
       
         
           
-            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>ipython notebook這個套件相當強大，其中的notebook功能可以在瀏覽器上執行python並看到結果。<br>這個功能非常符合教學與分享的需要，如果你是初新手或是正準備轉職數據分析的工程師，此套件非常建議安裝。 </p>
-<h2 id="ipython-notebook安裝"><a href="#ipython-notebook安裝" class="headerlink" title="ipython notebook安裝"></a>ipython notebook安裝</h2><p>安裝ipython notebook前，需要先安裝python，安裝python方法可以參考之前的文章<br><a href="/2018/03/13/Python-環境安裝/" title="Python 環境安裝">Python 環境安裝</a><br>在”Windows 命令提示字元”下執行 以下指令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install <span class="string">"ipython[notebook]"</span></span><br></pre></td></tr></table></figure></p>
-<img src="/images/ipython_install.PNG" width="800" height="600" title="輸入pip install ipython[notebook]">
-<p>安裝成功會出現Successfully installed<br><img src="/images/ipython_install_complate.PNG" width="800" height="600" title="安裝成功"></p>
-<p>如果安裝失敗(出現紅字)是以下的原因，出現”PermissionError: “<br><img src="/images/ipython_install_error.PNG" width="800" height="600" title="安裝失敗"></p>
-<p>則在Windows 左下角開啟”Windows 命令提示字元”時，點滑鼠右鍵，選擇”以系統管理身分執行”</p>
-<h2 id="執行ipython-notebook"><a href="#執行ipython-notebook" class="headerlink" title="執行ipython notebook"></a>執行ipython notebook</h2><p>在執行ipython notebook 前，我們先建立一個資料夾，到時候執行ipython notebook 可以直接讀取資料夾內的檔案，<br>我們在notebook上執行的程式也會存到此資料夾。</p>
-<p>在命令提示字元，先回到根目錄底下，執行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir ipython_notebook_workplace</span><br><span class="line"><span class="built_in">cd</span> ipython_notebook_workplace</span><br><span class="line">ipython notebook</span><br></pre></td></tr></table></figure></p>
-<img src="/images/ipython_mkdir_run.PNG" width="800" height="600" title="建立資料夾並執行">
-<p>執行後會以瀏覽器開啟，jupyter。<br><img src="/images/noetbook_work_01.PNG" width="800" height="600" title="notebook執行畫面"><br>再來點選右邊New，新增一個Python3檔案</p>
-<p>OK，大功告成，我們來鍵入第一個程式，來試試看吧<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">"Hello world"</span>)</span><br></pre></td></tr></table></figure></p>
-<p>打上程式後，執行run，即可看到結果”Hello world”<br><img src="/images/jupyter_hello_01.PNG" width="800" height="600" title="Hello world"></p>
-<p>以後要執行Python程式，都可以用ipython notebook來直接看到結果了!!</p>
-
-          
+          前言ipython notebook這個套件相當強大，其中的notebook功能可以在瀏覽器上執行python並看到結果。這個功能非常符合教學與分享的需要，如果你是初新手或是正準備轉職數據分析的工程師，此套件非常建議安裝。 
+ipython notebook安裝安裝ipython notebook前
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/13/notebook教學/#more" rel="contents">
+              閱讀全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -680,20 +655,17 @@
       
         
           
-            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本頁面僅紀錄如何進行Python 環境安裝。</p>
-<h2 id="Python-環境安裝-Windows"><a href="#Python-環境安裝-Windows" class="headerlink" title="Python 環境安裝[Windows]"></a>Python 環境安裝[Windows]</h2><h4 id="下載Python"><a href="#下載Python" class="headerlink" title="下載Python"></a>下載Python</h4><p>先從官網下載，注意選擇Windows 版本<br><a href="https://www.python.org/downloads/" target="_blank" rel="noopener">點我進入Python 官網</a><br><img src="/images/python_install_01.PNG" width="800" height="600" title="Python下載"></p>
-<p>我這邊選擇Python 3 為了之後的Tensorflow做準備!!當然本人還是建議能夠用Linux 開發Tensorflow還是比較好的。</p>
-<p>各位同學依照需求選取Python 版本即可。</p>
-<h4 id="安裝Python"><a href="#安裝Python" class="headerlink" title="安裝Python"></a>安裝Python</h4><img src="/images/python_install_step.PNG" width="800" height="600" title="Python 安裝">
-<p>基本上一直下一步即可。</p>
-<h4 id="環境變數設定"><a href="#環境變數設定" class="headerlink" title="環境變數設定"></a>環境變數設定</h4><p>安裝好之後，要設定環境變數，這樣才能”Windows 命令提示字元”下使用<br>首先找出Python 安裝位置<br><img src="/images/python_path_setting.PNG" width="800" height="600" title="Python 安裝位置"></p>
-<p>複製上面那串路徑後，去找到我的電腦，點右鍵—&gt;內容—&gt;左邊列表的進階系統設定<br>window 7 叫我的電腦<br>window 10 則是找到本機<br><img src="/images/python_path_setting_02.PNG" width="800" height="600" title="進階系統設定"><br>點環境變數</p>
-<p>環境變數底下有個Path，選Path後再點編輯<br><img src="/images/python_path_setting_03.PNG" width="800" height="600" title="環境變數"></p>
-<p>新增環境變數，點右上角新增，把剛剛複製Python路徑貼上。<br><img src="/images/python_path_setting_04.PNG" width="800" height="600" title="環境變數"></p>
-<p>然後重開機，重開機後 於左下角的開始列表 打出cmd，叫出”Windows 命令提示字元”<br>輸入Python 看到以下畫面，OK 大功告成<br><img src="/images/python_path_setting_complate.PNG" width="800" height="600" title="環境變數"></p>
-<p>下一篇則是 Jupyter 安裝教學<br><a href="/2018/03/13/notebook教學/" title="ipython notebook安裝教學">ipython notebook安裝教學</a></p>
-
-          
+          前言本頁面僅紀錄如何進行Python 環境安裝。
+Python 環境安裝[Windows]下載Python先從官網下載，注意選擇Windows 版本點我進入Python 官網
+我這邊選擇Python 3 為了之後的Tensorflow做準備!!當然本人還是建議能夠用Linux 開發Tensorflo
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/13/Python-環境安裝/#more" rel="contents">
+              閱讀全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -844,38 +816,17 @@
       
         
           
-            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Python，做為一個程式語言相當平易近人也好上手，也是在這波大數據分析，人工智慧的浪潮下不可或缺的程式語言。</p>
-<h2 id="Python-是甚麼"><a href="#Python-是甚麼" class="headerlink" title="Python 是甚麼"></a>Python 是甚麼</h2><p>二話不多說Python，直接來看Wiki上描述的Python</p>
-<blockquote><p>Python的設計哲學是「優雅」、「明確」、「簡單」。<br>Python開發者的哲學是「用一種方法，最好是只有一種方法來做一件事」</p>
-<footer><strong>@Python</strong><cite><a href="https://zh.wikipedia.org/wiki/Python" target="_blank" rel="noopener">zh.wikipedia.org/wiki/Python</a></cite></footer></blockquote>
-<h2 id="第一個Python程式"><a href="#第一個Python程式" class="headerlink" title="第一個Python程式"></a>第一個Python程式</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#第一個程式,用print() 這個函數 來跟大家打招呼吧</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">"Hello world"</span>)</span><br><span class="line"><span class="comment">#輸出結果: Hello world</span></span><br></pre></td></tr></table></figure>
-<p>輸出結果:<br>Hello world</p>
-<h2 id="字串組合"><a href="#字串組合" class="headerlink" title="字串組合"></a>字串組合</h2><p>範例:<br>    首先設定 string_variable = “Hello”,myname = “ Eric”<br>    再讓兩個字串組合  string_variable+myname 並顯示</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">string_variable = <span class="string">"Hello"</span></span><br><span class="line">myname = <span class="string">" Eric"</span></span><br><span class="line">print(string_variable+myname)</span><br><span class="line"><span class="comment">#輸出結果: Hello Eric	</span></span><br></pre></td></tr></table></figure>
-<h2 id="數字的四則運算"><a href="#數字的四則運算" class="headerlink" title="數字的四則運算"></a>數字的四則運算</h2><p>範例:<br>   設定 variable_a = 3,variable_b = 2<br>   相加 variable_a+variable_b<br>   相減 variable_a-variable_b<br>   相乘 variable_a*variable_b<br>   相除 variable_a/variable_b<br>   取餘數 variable_a%variable_b</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">variable_a = <span class="number">3</span></span><br><span class="line">variable_b = <span class="number">2</span></span><br><span class="line">variable_a+variable_b </span><br><span class="line"><span class="comment">#輸出結果 5</span></span><br><span class="line">variable_a-variable_b </span><br><span class="line"><span class="comment">#輸出結果 1</span></span><br><span class="line">variable_a*variable_b </span><br><span class="line"><span class="comment">#輸出結果 6</span></span><br><span class="line">variable_a/variable_b </span><br><span class="line"><span class="comment">#輸出結果 1.5</span></span><br><span class="line">variable_a%variable_b</span><br><span class="line"><span class="comment">#輸出結果 1  </span></span><br></pre></td></tr></table></figure>
-<h2 id="IF-ElSE"><a href="#IF-ElSE" class="headerlink" title="IF-ElSE"></a>IF-ElSE</h2><p>範例:<br>   設定  variable_a = 3,variable_b = 2<br>   檢驗  variable_a 是否大於 variable_b<br>   如果  variable_a 大於 variable_b 則顯示字串 “a 大於 b”,反之 則顯示字串 “a 小於 b”<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">variable_a = <span class="number">3</span></span><br><span class="line">variable_b = <span class="number">2</span></span><br><span class="line"><span class="keyword">if</span>(variable_a &gt; variable_b):</span><br><span class="line">    print(<span class="string">"a 大於 b"</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">"a 小於 b"</span>)</span><br><span class="line"><span class="comment">#輸出結果:"a 大於 b" </span></span><br></pre></td></tr></table></figure><br>來看看 a =3 , b = 4  程式執行結果<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">variable_a = <span class="number">3</span></span><br><span class="line">variable_b = <span class="number">4</span></span><br><span class="line"><span class="keyword">if</span>(variable_a &gt; variable_b):</span><br><span class="line">    print(<span class="string">"a 大於 b"</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">"a 小於 b"</span>)</span><br><span class="line"><span class="comment">#輸出結果:"a 小於 b"</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="IF-ElIF-ElSE"><a href="#IF-ElIF-ElSE" class="headerlink" title="IF-ElIF-ElSE"></a>IF-ElIF-ElSE</h2><p>範例:<br>   情境 設計一段程式,來檢查該正整數是奇數還是偶數<br>   偶數定義: 能被2整除的為偶數<br>   奇數定義: 不能被2整除的為奇數<br>   設定  variable_x 為正整數<br>   檢驗  variable_x 如果小於0,則顯示 重新輸入<br>   如果  variable_x 如果被2整除,則顯示 “variable_x 是偶數”<br>   如果  variable_x 如果不能被2,則顯示 “variable_x 是奇數”<br>   <em>int() 會將裡面的數值轉成整數，因此撇除是浮點數的問題</em><br>以下同學可以自己試跑看看結果<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">variable_x = int(input(<span class="string">"請輸入正整數:"</span>))</span><br><span class="line"><span class="keyword">if</span>(variable_x &lt;= <span class="number">0</span>):</span><br><span class="line">    print(<span class="string">"請重新輸入"</span>)</span><br><span class="line"><span class="keyword">elif</span>((variable_x % <span class="number">2</span>) ==<span class="number">0</span> ):</span><br><span class="line">    print(<span class="string">"%d 是偶數"</span> % variable_x)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">"%d 是奇數"</span> % variable_x)</span><br></pre></td></tr></table></figure></p>
-<h2 id="IF-and、or"><a href="#IF-and、or" class="headerlink" title="IF and、or"></a>IF and、or</h2><p>條件組合<br> True and True   是 True<br> True and False  是 False<br> True or  True   是 True<br> True or False   是 True<br> False or False  是 False<br> False and False 是 False<br>範例:<br>    判斷variable_x 是不是大於0,且是整數,是正整數在進行判斷是偶數還是奇數<br>    如果不是正整數,請顯示重新輸入</p>
-<pre><code>我們這邊用了float()這個函數,這個函數是把整數和字串換成浮點數 白話來說就是把 1 換成1.0。
-為了教學需要這邊用float 表示輸入可以是浮點數,所以在程式上我們要多一個判斷使用者輸入是否為整數
-int(variable_x) == variable_x 如果為True，表示使用者輸入的是整數，如果為False 則表示使用者輸入為浮點數
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">	</span><br><span class="line">variable_x = float(input(<span class="string">"請輸入正整數:"</span>))</span><br><span class="line"><span class="keyword">if</span>((int(variable_x) == variable_x) <span class="keyword">and</span> (variable_x &gt; <span class="number">0</span>)):</span><br><span class="line">    <span class="keyword">if</span> ((variable_x % <span class="number">2</span>) ==<span class="number">0</span>):</span><br><span class="line">        print(<span class="string">"%d 是偶數"</span> % variable_x)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(<span class="string">"%d 是奇數"</span> % variable_x)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">"請重新輸入"</span> )</span><br></pre></td></tr></table></figure> 
-<h2 id="list-序列"><a href="#list-序列" class="headerlink" title="list 序列"></a>list 序列</h2><p>序列是Python中最基本的數據結構。序列中的每個元素都分配一個數字 - 它的位置，或索引，第一個索引是0，第二個索引是1，依此類推。<br>請看以下程式範例<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">list_1 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line">print(list_1[<span class="number">0</span>])</span><br><span class="line"><span class="comment">#輸出結果為 1</span></span><br><span class="line">list_2 = [<span class="string">"hello"</span>,<span class="string">"Eric"</span>,<span class="string">"今天天氣如何"</span>]</span><br><span class="line">print(list_2[<span class="number">0</span>])</span><br><span class="line"><span class="comment">#輸出結果為 hello</span></span><br><span class="line">list_2 = [<span class="string">"hello"</span>,<span class="string">"Eric"</span>,<span class="string">"今天天氣如何"</span>]</span><br><span class="line">print(list_2[<span class="number">0</span>]+<span class="string">" "</span>+list_2[<span class="number">1</span>]+<span class="string">" "</span>+list_2[<span class="number">2</span>])</span><br><span class="line"><span class="comment">#輸出結果為 hello Eric 今天天氣如何</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="For-loop"><a href="#For-loop" class="headerlink" title="For loop"></a>For loop</h2><p>Python for loop 可以遍歷任何序列的項目，如一個列表或者一個字符串。<br>for iterating_var in sequence:<br>   statements(s)<br>請看以下範例:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]:</span><br><span class="line">    print(i)</span><br></pre></td></tr></table></figure><br>輸出結果:<br>0<br>1<br>2<br>3<br>4 </p>
-<h2 id="range"><a href="#range" class="headerlink" title="range()"></a>range()</h2><p>python range() 函數可創建一個整數列表<br>範例:<br>    range(5) 產生 [0,1,2,3,4]<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">list_tmp = range(<span class="number">4</span>)</span><br><span class="line">print(list_tmp) 	</span><br></pre></td></tr></table></figure></p>
-<p>#輸出結果 [0,1,2,3]</p>
-<h2 id="複合題型"><a href="#複合題型" class="headerlink" title="複合題型"></a>複合題型</h2><p>印出1~100 是偶數的數字<br>用到 IF else,For loop,range(),  a%b 顯示餘數<br>建議同學要自己練習一遍 Learning by doning<br><blockquote><p>Learning by doning</p>
-<footer><strong>John Dewey.</strong><cite>A theory of education</cite></footer></blockquote><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">101</span>):</span><br><span class="line">    <span class="keyword">if</span> (i != <span class="number">0</span>):</span><br><span class="line">        <span class="keyword">if</span>(i%<span class="number">2</span> ==<span class="number">0</span>):</span><br><span class="line">            print(i)</span><br></pre></td></tr></table></figure></p>
-<h2 id="複合題型-1"><a href="#複合題型-1" class="headerlink" title="複合題型"></a>複合題型</h2><p>印出1~100 找出所有的質數<br>用到 IF else,For loop,range(),  a%b 顯示餘數<br>建議同學要自己練習一遍 Learning by doning<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">101</span>):</span><br><span class="line">    <span class="keyword">if</span> (i &gt;=<span class="number">2</span>):</span><br><span class="line">        count = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> k <span class="keyword">in</span> range(i):</span><br><span class="line">            <span class="keyword">if</span>(k&gt;=<span class="number">2</span>):</span><br><span class="line">                <span class="keyword">if</span>(i%k !=<span class="number">0</span>):</span><br><span class="line">                    count+=<span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                count+=<span class="number">1</span>       </span><br><span class="line">        <span class="keyword">if</span>(count==i):</span><br><span class="line">            print(<span class="string">"質數 %d"</span>% i)</span><br></pre></td></tr></table></figure></p>
-<h2 id="while-loop"><a href="#while-loop" class="headerlink" title="while loop"></a>while loop</h2><p>Python 編程中 while 語句用於循環執行程序，即在某條件下，循環執行某段程序，以處理需要重複處理的相同任務。其基本形式為：</p>
-<p>while 判斷條件:<br>    執行<br>範例:<br>    用while loop 印出 1~100<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">	</span><br><span class="line">i = <span class="number">1</span></span><br><span class="line"><span class="keyword">while</span>(i &lt;= <span class="number">100</span>):</span><br><span class="line">    print(i)</span><br><span class="line">    i+=<span class="number">1</span>	</span><br></pre></td></tr></table></figure></p>
-<h2 id="利用while-loop-來找100以內的質數"><a href="#利用while-loop-來找100以內的質數" class="headerlink" title="利用while loop 來找100以內的質數"></a>利用while loop 來找100以內的質數</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">i = <span class="number">2</span></span><br><span class="line"><span class="keyword">while</span>(i &lt;= <span class="number">100</span>):</span><br><span class="line">    k=<span class="number">2</span></span><br><span class="line">    <span class="keyword">while</span>(k&lt;i):</span><br><span class="line">        <span class="keyword">if</span>(i%k==<span class="number">0</span>):</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        k+=<span class="number">1</span>    </span><br><span class="line">    <span class="keyword">if</span>(k==i):</span><br><span class="line">        print(<span class="string">"質數 %d"</span>%i) </span><br><span class="line">    i+=<span class="number">1</span></span><br></pre></td></tr></table></figure>
-<h2 id="function-函數"><a href="#function-函數" class="headerlink" title="function() 函數"></a>function() 函數</h2><p>函數是組織好的，可重複使用的，用來實現單一，或相關聯功能的代碼段。<br>函數能提高應用的模塊性，和代碼的重複利用率。<br>範例:<br>    偶數奇數判斷<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">isEvenNumbers</span><span class="params">(num)</span>:</span></span><br><span class="line">    <span class="keyword">if</span>(num%<span class="number">2</span> ==<span class="number">0</span> ):</span><br><span class="line">        <span class="keyword">return</span> (str(num)+<span class="string">" 是偶數"</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> (str(num)+<span class="string">" 是奇數"</span>)</span><br><span class="line">variable_x = int(input(<span class="string">"請輸入正整數:"</span>))</span><br><span class="line"><span class="keyword">if</span>(variable_x &lt;= <span class="number">0</span>):</span><br><span class="line">    print(<span class="string">"請重新輸入"</span>) </span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(isEvenNumbers(variable_x))</span><br></pre></td></tr></table></figure></p>
-<h2 id="建構一個函數，用來判斷是否為質數"><a href="#建構一個函數，用來判斷是否為質數" class="headerlink" title="建構一個函數，用來判斷是否為質數"></a>建構一個函數，用來判斷是否為質數</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">isPrimeNumbers</span><span class="params">(num)</span>:</span></span><br><span class="line">    k=<span class="number">2</span></span><br><span class="line">    <span class="keyword">while</span>(k&lt;num):</span><br><span class="line">        <span class="keyword">if</span>(num%k==<span class="number">0</span>):</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">        k+=<span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">True</span>        </span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">101</span>):</span><br><span class="line">    <span class="keyword">if</span>(i&gt;=<span class="number">2</span>):</span><br><span class="line">        <span class="keyword">if</span>(isPrimeNumbers(i)):</span><br><span class="line">            print(<span class="string">"%d 是質數"</span>%i)</span><br></pre></td></tr></table></figure>
-<h2 id="用Python來設計遊戲-終極密碼"><a href="#用Python來設計遊戲-終極密碼" class="headerlink" title="用Python來設計遊戲:終極密碼"></a>用Python來設計遊戲:終極密碼</h2><p>設計終極密碼 1~100<br>先設定答案，然後讓使用者輸入數字，如果沒猜中，則讓使用者再次輸入，並顯示範圍<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">anser_number=<span class="number">71</span></span><br><span class="line">Flag = <span class="keyword">True</span></span><br><span class="line">start_number= <span class="number">1</span></span><br><span class="line">end_number =<span class="number">100</span></span><br><span class="line"><span class="keyword">while</span>(Flag):    </span><br><span class="line">    guess_number = int(input(<span class="string">"終極密碼，%d到%d: "</span>%(start_number,end_number)))</span><br><span class="line">    <span class="keyword">if</span>(guess_number == anser_number):</span><br><span class="line">        print(<span class="string">"恭喜猜中，密碼是%d "</span>% anser_number)</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">elif</span>(guess_number &lt; anser_number ):</span><br><span class="line">        start_number = guess_number</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        end_number = guess_number</span><br></pre></td></tr></table></figure></p>
-
-          
+          前言Python，做為一個程式語言相當平易近人也好上手，也是在這波大數據分析，人工智慧的浪潮下不可或缺的程式語言。
+Python 是甚麼二話不多說Python，直接來看Wiki上描述的Python
+Python的設計哲學是「優雅」、「明確」、「簡單」。Python開發者的哲學是「用一種方法，最好是只
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/13/python-一小時快速上手/#more" rel="contents">
+              閱讀全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -969,10 +920,10 @@ int(variable_x) == variable_x 如果為True，表示使用者輸入的是整數�
               
               
               <div class="site-state-item site-state-categories">
-                
+                <a href="/categories/index.html">
                   <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">分類</span>
-                
+                </a>
               </div>
             
 
@@ -1052,7 +1003,7 @@ int(variable_x) == variable_x 如果為True，表示使用者輸入的是整數�
 
 
 
-  <div class="theme-info">主題 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">主題 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
 
 
 
@@ -1151,6 +1102,13 @@ int(variable_x) == variable_x 如果為True，表示使用者輸入的是整數�
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
 
   
 
