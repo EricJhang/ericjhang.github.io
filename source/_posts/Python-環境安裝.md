@@ -5,8 +5,9 @@ tags:
   - Python 安裝
 categories:
   - python
+keywords: 'Python ,環境安裝,安裝,教學'
+abbrlink: ad5450f3
 date: 2018-03-13 19:51:08
-keywords: Python 安裝,Python 環境安裝,Python 環境
 ---
 
 

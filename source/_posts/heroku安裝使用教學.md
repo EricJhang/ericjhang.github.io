@@ -5,12 +5,13 @@ tags:
   - Heroku
 categories:
   - Heroku
+keywords: 'Heroku,安裝,教學,申請'
+abbrlink: 689940fd
 date: 2018-03-14 15:48:52
-keywords: Heroku安裝,Heroku 安裝教學,Heroku教學,Heroku,heroku
 ---
 
 
-## 前言
+## Heroku安裝教學-前言
 Heroku 是一個平台即服務(PaaS)，各個開發者或是開發團隊可以自行在Heroku平台開發&佈署各種網站。
 好處是可以減少維護管理系統底層的成本，也透過簡單的介面來調整所需要的硬體設備等級或是資源。
 PaaS的平台不少，但是Heroku操作相當簡單，可以讓開發者初期專心的開發程式，而不用煩惱管理機器或是其他維護。

@@ -5,13 +5,14 @@ tags:
   - ipyhton noteboot 安裝
   - jupyter
 categories:
-  - python  
+  - python
+keywords: 'ipython notebook,ipython ,安裝教學,jupyter'
+abbrlink: e300480b
 date: 2018-03-13 19:51:22
-keywords: ipython notebook,ipython notebook安裝教學,ipython 安裝教學,jupyter 安裝 
 ---
 
 
-## 前言
+## ipython notebook安裝教學-前言
 ipython notebook這個套件相當強大，其中的notebook功能可以在瀏覽器上執行python並看到結果。
 這個功能非常符合教學與分享的需要，如果你是初新手或是正準備轉職數據分析的工程師，此套件非常建議安裝。 
 
