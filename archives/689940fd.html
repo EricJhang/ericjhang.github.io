@@ -81,22 +81,22 @@
 
 
 
-<meta name="description" content="Heroku安裝教學-前言Heroku 是一個平台即服務(PaaS)，各個開發者或是開發團隊可以自行在Heroku平台開發&amp;amp;佈署各種網站。好處是可以減少維護管理系統底層的成本，也透過簡單的介面來調整所需要的硬體設備等級或是資源。PaaS的平台不少，但是Heroku操作相當簡單，可以讓開發者初期專心的開發程式，而不用煩惱管理機器或是其他維護。當然如果網站隨著上線後流量變大，那麼Heroku就">
+<meta name="description" content="本篇介紹Heroku安裝、教學以及如何使用~">
 <meta name="keywords" content="Heroku,安裝,教學,申請">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Heroku安裝使用教學">
 <meta property="og:url" content="https://ericjhang.github.io/archives/689940fd.html">
 <meta property="og:site_name" content="科技的旅程">
-<meta property="og:description" content="Heroku安裝教學-前言Heroku 是一個平台即服務(PaaS)，各個開發者或是開發團隊可以自行在Heroku平台開發&amp;amp;佈署各種網站。好處是可以減少維護管理系統底層的成本，也透過簡單的介面來調整所需要的硬體設備等級或是資源。PaaS的平台不少，但是Heroku操作相當簡單，可以讓開發者初期專心的開發程式，而不用煩惱管理機器或是其他維護。當然如果網站隨著上線後流量變大，那麼Heroku就">
+<meta property="og:description" content="本篇介紹Heroku安裝、教學以及如何使用~">
 <meta property="og:locale" content="zh-tw">
 <meta property="og:image" content="https://ericjhang.github.io/images/heroku_cli.PNG">
 <meta property="og:image" content="https://ericjhang.github.io/images/heroku_cli_install_error.PNG">
 <meta property="og:image" content="https://ericjhang.github.io/images/heroku_cli_install_sucess.PNG">
 <meta property="og:image" content="https://ericjhang.github.io/images/heroku_login.PNG">
-<meta property="og:updated_time" content="2018-03-25T10:59:33.543Z">
+<meta property="og:updated_time" content="2018-04-15T08:35:08.195Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Heroku安裝使用教學">
-<meta name="twitter:description" content="Heroku安裝教學-前言Heroku 是一個平台即服務(PaaS)，各個開發者或是開發團隊可以自行在Heroku平台開發&amp;amp;佈署各種網站。好處是可以減少維護管理系統底層的成本，也透過簡單的介面來調整所需要的硬體設備等級或是資源。PaaS的平台不少，但是Heroku操作相當簡單，可以讓開發者初期專心的開發程式，而不用煩惱管理機器或是其他維護。當然如果網站隨著上線後流量變大，那麼Heroku就">
+<meta name="twitter:description" content="本篇介紹Heroku安裝、教學以及如何使用~">
 <meta name="twitter:image" content="https://ericjhang.github.io/images/heroku_cli.PNG">
 
 
@@ -369,7 +369,8 @@
       
 
       
-        <h2 id="Heroku安裝教學-前言"><a href="#Heroku安裝教學-前言" class="headerlink" title="Heroku安裝教學-前言"></a>Heroku安裝教學-前言</h2><p>Heroku 是一個平台即服務(PaaS)，各個開發者或是開發團隊可以自行在Heroku平台開發&amp;佈署各種網站。<br>好處是可以減少維護管理系統底層的成本，也透過簡單的介面來調整所需要的硬體設備等級或是資源。<br>PaaS的平台不少，但是Heroku操作相當簡單，可以讓開發者初期專心的開發程式，而不用煩惱管理機器或是其他維護。<br>當然如果網站隨著上線後流量變大，那麼Heroku就不一定適合了，不管如何Heroku 對於早期的開發者是非常適合的。</p>
+        <p>本篇介紹Heroku安裝、教學以及如何使用~<br><a id="more"></a></p>
+<h2 id="Heroku安裝教學-前言"><a href="#Heroku安裝教學-前言" class="headerlink" title="Heroku安裝教學-前言"></a>Heroku安裝教學-前言</h2><p>Heroku 是一個平台即服務(PaaS)，各個開發者或是開發團隊可以自行在Heroku平台開發&amp;佈署各種網站。<br>好處是可以減少維護管理系統底層的成本，也透過簡單的介面來調整所需要的硬體設備等級或是資源。<br>PaaS的平台不少，但是Heroku操作相當簡單，可以讓開發者初期專心的開發程式，而不用煩惱管理機器或是其他維護。<br>當然如果網站隨著上線後流量變大，那麼Heroku就不一定適合了，不管如何Heroku 對於早期的開發者是非常適合的。</p>
 <h2 id="Heroku-安裝"><a href="#Heroku-安裝" class="headerlink" title="Heroku 安裝"></a>Heroku 安裝</h2><p>首先先到Heroko 申請一個帳號<br><a href="https://www.heroku.com/" target="_blank" rel="noopener">網站:https://www.heroku.com/</a> </p>
 <h2 id="申請Heroku帳號"><a href="#申請Heroku帳號" class="headerlink" title="申請Heroku帳號"></a>申請Heroku帳號</h2><p>目前申請Heroku 帳號是免費的，填寫一些基本資料即可申請</p>
 <h2 id="免費帳號的限制"><a href="#免費帳號的限制" class="headerlink" title="免費帳號的限制"></a>免費帳號的限制</h2><p>Heroku 免費帳號的限制對開發者比較有影響的就是</p>
@@ -533,7 +534,7 @@
               
                 <a href="../archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">文章</span>
                 </a>
               </div>
@@ -555,7 +556,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="../tags/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">標籤</span>
                 </a>
               </div>
