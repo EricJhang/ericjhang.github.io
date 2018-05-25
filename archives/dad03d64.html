@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-tw">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="z6laoRA7P3EN7NTPKQ-39E5aGM9NvxKxVT1CDkmUrhs" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="../lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="../lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="../css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="../images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="爬蟲,台灣大樂透,Python,網路爬蟲" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="AI的領域之中，如何獲取資料並儲存是重要的第一步，網路爬蟲可以是獲取網路資料的重要技能之一。而Python 則是用來做網路爬蟲非常好的工具，因此本篇將教你如何用Python 做網路爬蟲來獲取台灣大樂透號碼。透過此文章的教學讓非工程師也能夠理解，網路爬蟲是甚麼，非常建議非工程師的讀者能夠自己來玩看看註:本篇僅作教學使用，未提供任何獎號預測。">
+<meta name="keywords" content="爬蟲,台灣大樂透,Python,網路爬蟲">
+<meta property="og:type" content="article">
+<meta property="og:title" content="輕鬆學會網路爬蟲，教你用Python爬蟲爬大樂透">
+<meta property="og:url" content="https://ericjhang.github.io/archives/dad03d64.html">
+<meta property="og:site_name" content="科技的旅程">
+<meta property="og:description" content="AI的領域之中，如何獲取資料並儲存是重要的第一步，網路爬蟲可以是獲取網路資料的重要技能之一。而Python 則是用來做網路爬蟲非常好的工具，因此本篇將教你如何用Python 做網路爬蟲來獲取台灣大樂透號碼。透過此文章的教學讓非工程師也能夠理解，網路爬蟲是甚麼，非常建議非工程師的讀者能夠自己來玩看看註:本篇僅作教學使用，未提供任何獎號預測。">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="https://ericjhang.github.io/images/2018-05-09_104955.png">
+<meta property="og:image" content="https://ericjhang.github.io/images/2018-05-09_104955_new_step.png">
+<meta property="og:image" content="https://ericjhang.github.io/images/2018-05-09_104955_step_2.png">
+<meta property="og:image" content="https://ericjhang.github.io/images/2018-05-09_104955_step3.png">
+<meta property="og:image" content="https://ericjhang.github.io/images/lotto_craw_setp_02.png">
+<meta property="og:image" content="https://ericjhang.github.io/images/lotto_craw_step_04.png">
+<meta property="og:image" content="https://ericjhang.github.io/images/TW_lotto_page_01.png">
+<meta property="og:image" content="https://ericjhang.github.io/images/TW_lotto_04.png">
+<meta property="og:image" content="https://ericjhang.github.io/images/lotto_craw_result_02.png">
+<meta property="og:image" content="https://ericjhang.github.io/images/lotto_cram_result_04png.png">
+<meta property="og:updated_time" content="2018-05-25T08:53:24.361Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="輕鬆學會網路爬蟲，教你用Python爬蟲爬大樂透">
+<meta name="twitter:description" content="AI的領域之中，如何獲取資料並儲存是重要的第一步，網路爬蟲可以是獲取網路資料的重要技能之一。而Python 則是用來做網路爬蟲非常好的工具，因此本篇將教你如何用Python 做網路爬蟲來獲取台灣大樂透號碼。透過此文章的教學讓非工程師也能夠理解，網路爬蟲是甚麼，非常建議非工程師的讀者能夠自己來玩看看註:本篇僅作教學使用，未提供任何獎號預測。">
+<meta name="twitter:image" content="https://ericjhang.github.io/images/2018-05-09_104955.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://ericjhang.github.io/archives/dad03d64.html"/>
+
+
+
+
+
+  <title>輕鬆學會網路爬蟲，教你用Python爬蟲爬大樂透 | 科技的旅程</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-115784236-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">科技的旅程</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">科技的大浪推著我們前進</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            標籤
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分類
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            歸檔
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://ericjhang.github.io">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Eric Jhang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="../uploads/IMG_5110.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="科技的旅程">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">輕鬆學會網路爬蟲，教你用Python爬蟲爬大樂透</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-05-25T16:53:24+08:00">
+                2018-05-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="../categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="archives/dad03d64.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>AI的領域之中，如何獲取資料並儲存是重要的第一步，網路爬蟲可以是獲取網路資料的重要技能之一。<br>而Python 則是用來做網路爬蟲非常好的工具，因此本篇將教你如何用Python 做網路爬蟲來獲取台灣大樂透號碼。<br>透過此文章的教學讓非工程師也能夠理解，網路爬蟲是甚麼，非常建議非工程師的讀者能夠自己來玩看看<br>註:本篇僅作教學使用，未提供任何獎號預測。</p>
+<a id="more"></a>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>要打造一個AI，關鍵第一步是收集資料並儲存(觀察)，而網路爬蟲是一個收集資料重要技能，因此本篇將<br>深入淺出的介紹如何用Python打造一個台灣大樂透爬蟲程式。</p>
+<h2 id="Python爬蟲環境安裝"><a href="#Python爬蟲環境安裝" class="headerlink" title="Python爬蟲環境安裝"></a>Python爬蟲環境安裝</h2><p>Python環境安裝在先前的文章以介紹過，可參考此篇文章<a href="/archives/ad5450f3.html" title="Python 環境安裝">Python 環境安裝</a><br>使用Python爬蟲所需要以下的lib 安裝</p>
+<ol>
+<li><p>BeautifulSoup</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install beautifulsoup4</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>lxml </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install lxml</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Requests</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install requests</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>額外安裝，Python 資料處理所需套件</p>
+<ol>
+<li>Pandas 資料處理好幫手Pandas，Pandas可以用來更方便處理資料<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install Pandas</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="網路爬蟲講解"><a href="#網路爬蟲講解" class="headerlink" title="網路爬蟲講解"></a>網路爬蟲講解</h2><p>網路爬蟲的原理是透過解析網頁的內容資訊，以及解析網頁內的連結，透過此連結進入更深一層的網頁不斷循環，<br>直到爬完該網頁內的所有資訊。<br>而目前網頁結構都是基於HTML、Css，因此解析網頁的內容就需要有HTML跟CSS的基礎資訊。<br>想簡單理解HTML、CSS 可參考此網址<a href="http://linzy.csj.ks.edu.tw/materials/html_use.htm" target="_blank" rel="noopener">HTML基礎教學</a><br>如果英文能力比較好的可以參考<a href="https://www.w3schools.com/" target="_blank" rel="noopener">w3 school</a></p>
+<h2 id="大樂透網頁"><a href="#大樂透網頁" class="headerlink" title="大樂透網頁"></a>大樂透網頁</h2><p>要進行爬蟲前，最好先人工理解想要爬蟲的目標網頁內容，<a href="http://www.taiwanlottery.com.tw/Lotto/Lotto649/history.aspx" target="_blank" rel="noopener">台彩大樂透</a><br>台彩大樂透網頁，用Chrome 進入此頁面，按下F12 就可以看到以下頁面<br><img src="/images/2018-05-09_104955.png" width="800" height="600" title="台灣大樂透"><br>依序點擊</p>
+<ul>
+<li>Network</li>
+<li>Doc</li>
+<li>左邊列表history.aspx<img src="/images/2018-05-09_104955_new_step.png" width="800" height="600" title="台灣大樂透">
+</li>
+</ul>
+<h3 id="將網頁爬回來"><a href="#將網頁爬回來" class="headerlink" title="將網頁爬回來"></a>將網頁爬回來</h3><p>解析網頁最重要的部分，先找出url，再來看request method 是get，還是Post<br><img src="/images/2018-05-09_104955_step_2.png" width="800" height="600" title="requests url"><br>這邊的request method 是 get<br><img src="/images/2018-05-09_104955_step3.png" width="800" height="600" title="requests method"><br>有了url跟 request method 就可以將網頁頁面抓回來囉<br>鍵入以下程式碼<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">from bs4 import BeautifulSoup</span><br><span class="line">import requests</span><br><span class="line"></span><br><span class="line">head_Html_lotto=<span class="string">'http://www.taiwanlottery.com.tw/Lotto/Lotto649/history.aspx'</span></span><br><span class="line">res = requests.get(head_Html_lotto, timeout=30)</span><br><span class="line"><span class="built_in">print</span>(res.text)</span><br></pre></td></tr></table></figure></p>
+<p>執行於ipython notebook ，讀者可以參考之前文章<a href="/archives/e300480b.html" title="ipython notebook安裝教學">ipython notebook安裝教學</a><br><img src="/images/lotto_craw_setp_02.png" width="800" height="600" title="程式結果"></p>
+<p>程式抓回來的網頁內容，可以找到大樂透的開獎號碼<br><img src="/images/lotto_craw_step_04.png" width="800" height="600" title="樂透獎號"><br>來確認一下台彩大樂透網頁開獎號碼是否與抓回來的相同<br><img src="/images/TW_lotto_page_01.png" width="800" height="600" title="台彩大樂透獎號"></p>
+<p>到這邊已經完成一半了，再來進行刪去不必要的網頁內容，僅萃取出我們想看的資訊</p>
+<h3 id="萃取內容"><a href="#萃取內容" class="headerlink" title="萃取內容"></a>萃取內容</h3><p>萃取網頁資訊，我們使用Beautifulsoup，此工具已有許多功能了，可參考<a href="http://beautifulsoup.readthedocs.io/zh_CN/latest/" target="_blank" rel="noopener">Beautiful Soup 技術文件</a></p>
+<p>首先抓出大樂透獎號的html格式，獎號的html格式如下</p>
+<img src="/images/TW_lotto_04.png" width="800" height="600" title="獎號的html格式">
+<p>這邊可以看到關鍵的格式為<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;span id=<span class="string">"Lotto649Control_history_dlQuery_No1_0"</span>&gt;02&lt;/span&gt;</span><br></pre></td></tr></table></figure></p>
+<p>因此想法上，我們將分成兩個部份來處理:<br>-大部分解<br>-細部分解</p>
+<h4 id="大部分解"><a href="#大部分解" class="headerlink" title="大部分解"></a>大部分解</h4><p>先萃取並收集網頁內有 Lotto649Control_history_dlQuery_No1_ 等資訊，因此在程式中<br>我們要把所有獎號的id用一個List記錄起來，到時候讓soup.find_all 去找符合id並收集起來即可</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">from bs4 import BeautifulSoup</span><br><span class="line">import requests</span><br><span class="line"></span><br><span class="line">winning_Numbers_Sort_lotto = [<span class="string">'Lotto649Control_history_dlQuery_No1_'</span>,<span class="string">'Lotto649Control_history_dlQuery_No2_'</span>,<span class="string">'Lotto649Control_history_dlQuery_No3_'</span>,<span class="string">'Lotto649Control_history_dlQuery_No4_'</span>,<span class="string">'Lotto649Control_history_dlQuery_No5_'</span>,<span class="string">'Lotto649Control_history_dlQuery_No6_'</span>,<span class="string">'Lotto649Control_history_dlQuery_SNo_'</span>]</span><br><span class="line"></span><br><span class="line">def search_winning_numbers(css_class):</span><br><span class="line">    global winning_Numbers_Sort_lotto</span><br><span class="line">    <span class="keyword">if</span>(css_class != None):</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(winning_Numbers_Sort_lotto )):</span><br><span class="line">            <span class="keyword">if</span> winning_Numbers_Sort_lotto [i] <span class="keyword">in</span> css_class:</span><br><span class="line">                <span class="built_in">return</span> css_class              </span><br><span class="line">head_Html_lotto=<span class="string">'http://www.taiwanlottery.com.tw/Lotto/Lotto649/history.aspx'</span></span><br><span class="line">res = requests.get(head_Html_lotto, timeout=30)</span><br><span class="line"><span class="comment">#print(res.text)</span></span><br><span class="line">soup = BeautifulSoup(res.text,<span class="string">'lxml'</span>)</span><br><span class="line"><span class="comment">#print(soup2.prettify())</span></span><br><span class="line">header_Info = soup.find_all(id=search_winning_numbers)</span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> header_Info:</span><br><span class="line">    <span class="built_in">print</span>(item)</span><br></pre></td></tr></table></figure>
+<p>程式執行結果，可以看到大部分解後，內容已經乾淨許多。<br><img src="/images/lotto_craw_result_02.png" width="800" height="600" title="大部分解"></p>
+<h4 id="細部分解"><a href="#細部分解" class="headerlink" title="細部分解"></a>細部分解</h4><p>細部分解在大部分解之後，繼續萃取我們需要的資訊，這邊需要用到 css一種格式<br>從以下可以看到 <span></span> 夾住的資訊是02，因此程式中僅需要取 <span></span>.text 這種方式即可取得獎號<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;span id=<span class="string">"Lotto649Control_history_dlQuery_No1_0"</span>&gt;02&lt;/span&gt;</span><br></pre></td></tr></table></figure></p>
+<p>細部分解的method<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">def parse_tw_lotto_html(data_Info,number_count):  </span><br><span class="line">    data_Info_List = []</span><br><span class="line">    data_Info_Dict = &#123;&#125;</span><br><span class="line">    tmp_index = 0</span><br><span class="line">    <span class="keyword">for</span> index  <span class="keyword">in</span> range(len(data_Info)) :</span><br><span class="line">        <span class="keyword">if</span> (index == 0):</span><br><span class="line">			<span class="comment">#用data_Info[index].text 即可取得獎號</span></span><br><span class="line">            data_Info_List.append(data_Info[index].text)  </span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">if</span>(index % number_count != 0):</span><br><span class="line">                data_Info_List.append(data_Info[index].text)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                data_Info_Dict[str(tmp_index)] = list(data_Info_List)</span><br><span class="line">                data_Info_List= []</span><br><span class="line">                data_Info_List.append(data_Info[index].text)</span><br><span class="line">                tmp_index = tmp_index+1</span><br><span class="line">        data_Info_Dict[str(tmp_index)] = list(data_Info_List)</span><br><span class="line">    <span class="built_in">return</span> data_Info_List,data_Info_Dict</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">from bs4 import BeautifulSoup</span><br><span class="line">import requests</span><br><span class="line"></span><br><span class="line">winning_Numbers_Sort_lotto = [<span class="string">'Lotto649Control_history_dlQuery_No1_'</span>,<span class="string">'Lotto649Control_history_dlQuery_No2_'</span>,<span class="string">'Lotto649Control_history_dlQuery_No3_'</span>,<span class="string">'Lotto649Control_history_dlQuery_No4_'</span>,<span class="string">'Lotto649Control_history_dlQuery_No5_'</span>,<span class="string">'Lotto649Control_history_dlQuery_No6_'</span>,<span class="string">'Lotto649Control_history_dlQuery_SNo_'</span>]</span><br><span class="line"></span><br><span class="line">def search_winning_numbers(css_class):</span><br><span class="line">    global winning_Numbers_Sort_lotto</span><br><span class="line">    <span class="keyword">if</span>(css_class != None):</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(winning_Numbers_Sort_lotto )):</span><br><span class="line">            <span class="keyword">if</span> winning_Numbers_Sort_lotto [i] <span class="keyword">in</span> css_class:</span><br><span class="line">                <span class="built_in">return</span> css_class    </span><br><span class="line">def parse_tw_lotto_html(data_Info,number_count):  </span><br><span class="line">    data_Info_List = []</span><br><span class="line">    data_Info_Dict = &#123;&#125;</span><br><span class="line">    tmp_index = 0</span><br><span class="line">    <span class="keyword">for</span> index  <span class="keyword">in</span> range(len(data_Info)) :</span><br><span class="line">        <span class="keyword">if</span> (index == 0):</span><br><span class="line">            data_Info_List.append(data_Info[index].text)  </span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">if</span>(index % number_count != 0):</span><br><span class="line">                data_Info_List.append(data_Info[index].text)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                data_Info_Dict[str(tmp_index)] = list(data_Info_List)</span><br><span class="line">                data_Info_List= []</span><br><span class="line">                data_Info_List.append(data_Info[index].text)</span><br><span class="line">                tmp_index = tmp_index+1</span><br><span class="line">        data_Info_Dict[str(tmp_index)] = list(data_Info_List)</span><br><span class="line">    <span class="built_in">return</span> data_Info_List,data_Info_Dict            </span><br><span class="line">head_Html_lotto=<span class="string">'http://www.taiwanlottery.com.tw/Lotto/Lotto649/history.aspx'</span></span><br><span class="line">res = requests.get(head_Html_lotto, timeout=30)</span><br><span class="line">soup = BeautifulSoup(res.text,<span class="string">'lxml'</span>)</span><br><span class="line">header_Info = soup.find_all(id=search_winning_numbers)</span><br><span class="line">data_Info_List,data_Info_Dict  = parse_tw_lotto_html(header_Info,7)    </span><br><span class="line"><span class="built_in">print</span>(data_Info_Dict)</span><br></pre></td></tr></table></figure>
+<p>執行上面完整程式得到以下結果，可以看到我們已經成功取得所需要的大樂透獎號資訊了<br><img src="/images/lotto_cram_result_04png.png" width="800" height="600" title="細部分解"></p>
+<h3 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h3><p>透過Python 執行網頁爬蟲，已經容易許多了。<br>網頁爬蟲大體上流程</p>
+<ul>
+<li>初步理解網頁內容結構，</li>
+<li>人工判讀得到正確的url,以及request method </li>
+<li>將網頁內容爬回來</li>
+<li>萃取需要的網頁內容</li>
+</ul>
+<p>網路爬蟲可以是一種資料收集相當重要的手段之一，透過此文章的教學讓非工程師也能夠輕鬆<br>理解網路爬蟲是甚麼</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="../tags/Python-教學/" rel="tag"># Python 教學</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="723a11e.html" rel="next" title="[甚麼是AI，AI對我們又會造成甚麼影響]">
+                <i class="fa fa-chevron-left"></i> [甚麼是AI，AI對我們又會造成甚麼影響]
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="../uploads/IMG_5110.png"
+                alt="Eric Jhang" />
+            
+              <p class="site-author-name" itemprop="name">Eric Jhang</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="../archives/">
+              
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">文章</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="../categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分類</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="../tags/index.html">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">標籤</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/EricJhang" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:artopllting@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python爬蟲環境安裝"><span class="nav-number">2.</span> <span class="nav-text">Python爬蟲環境安裝</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#網路爬蟲講解"><span class="nav-number">3.</span> <span class="nav-text">網路爬蟲講解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#大樂透網頁"><span class="nav-number">4.</span> <span class="nav-text">大樂透網頁</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#將網頁爬回來"><span class="nav-number">4.1.</span> <span class="nav-text">將網頁爬回來</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#萃取內容"><span class="nav-number">4.2.</span> <span class="nav-text">萃取內容</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#大部分解"><span class="nav-number">4.2.1.</span> <span class="nav-text">大部分解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#細部分解"><span class="nav-number">4.2.2.</span> <span class="nav-text">細部分解</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#總結"><span class="nav-number">4.3.</span> <span class="nav-text">總結</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Eric Jhang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 強力驅動</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主題 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="../lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="../lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="../lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="../lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="../lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="../lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="../js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="../js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="../js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="../js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="../js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="../js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="../js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://ericmessage.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://ericjhang.github.io/archives/dad03d64.html';
+          this.page.identifier = 'archives/dad03d64.html';
+          this.page.title = '輕鬆學會網路爬蟲，教你用Python爬蟲爬大樂透';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://ericmessage.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
