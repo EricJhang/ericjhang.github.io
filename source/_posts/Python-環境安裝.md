@@ -3,6 +3,7 @@ title: Python 環境安裝
 tags:
   - Python
   - Python 安裝
+  - 教學
 categories:
   - python
 keywords: 'Python ,環境安裝,安裝,教學'

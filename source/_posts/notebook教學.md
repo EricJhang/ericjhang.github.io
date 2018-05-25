@@ -4,6 +4,7 @@ tags:
   - ipython notebook
   - ipyhton noteboot 安裝
   - jupyter
+  - 教學
 categories:
   - python
 keywords: 'ipython notebook,ipython ,安裝教學,jupyter'

@@ -3,13 +3,15 @@ title: Heroku安裝使用教學
 tags:
   - Heroku安裝使用教學
   - Heroku
+  - 教學
 categories:
   - Heroku
 keywords: 'Heroku,安裝,教學,申請'
 abbrlink: 689940fd
 date: 2018-03-14 15:48:52
 ---
-
+本篇介紹Heroku安裝、教學以及如何使用~
+<!-- more -->
 
 ## Heroku安裝教學-前言
 Heroku 是一個平台即服務(PaaS)，各個開發者或是開發團隊可以自行在Heroku平台開發&佈署各種網站。
