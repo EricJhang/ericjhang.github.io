@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-tw">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="z6laoRA7P3EN7NTPKQ-39E5aGM9NvxKxVT1CDkmUrhs" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="../lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="../lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="../css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="../images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="大數據,Big Data,數據浪潮,數據革命" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="筆者認為這波數據浪潮起源於2011年Google 啟動了一個專案Google Brain，這個項目是由著名的斯坦福大學機器學習教授Andrew Ng和在大規模計算機系統方面的世界頂尖專家Jeff Dean共同主導，用16000個CPU Core的並行計算平台訓練一種稱為“深層神經網絡”（DNN ，Deep Neural Networks）的機器學習模型，在語音識別和圖像識別等領域獲得了巨大的成功。">
+<meta name="keywords" content="大數據,Big Data,數據浪潮,數據革命">
+<meta property="og:type" content="article">
+<meta property="og:title" content="數據浪潮帶來的數據革命">
+<meta property="og:url" content="https://ericjhang.github.io/archives/e1a5c16b.html">
+<meta property="og:site_name" content="科技的旅程">
+<meta property="og:description" content="筆者認為這波數據浪潮起源於2011年Google 啟動了一個專案Google Brain，這個項目是由著名的斯坦福大學機器學習教授Andrew Ng和在大規模計算機系統方面的世界頂尖專家Jeff Dean共同主導，用16000個CPU Core的並行計算平台訓練一種稱為“深層神經網絡”（DNN ，Deep Neural Networks）的機器學習模型，在語音識別和圖像識別等領域獲得了巨大的成功。">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="https://ericjhang.github.io/images/BIG-DATA.png">
+<meta property="og:image" content="https://ericjhang.github.io/images/20150104015008363.jpg">
+<meta property="og:image" content="https://ericjhang.github.io/images/翻譯成績.png">
+<meta property="og:updated_time" content="2018-08-20T08:23:06.699Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="數據浪潮帶來的數據革命">
+<meta name="twitter:description" content="筆者認為這波數據浪潮起源於2011年Google 啟動了一個專案Google Brain，這個項目是由著名的斯坦福大學機器學習教授Andrew Ng和在大規模計算機系統方面的世界頂尖專家Jeff Dean共同主導，用16000個CPU Core的並行計算平台訓練一種稱為“深層神經網絡”（DNN ，Deep Neural Networks）的機器學習模型，在語音識別和圖像識別等領域獲得了巨大的成功。">
+<meta name="twitter:image" content="https://ericjhang.github.io/images/BIG-DATA.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://ericjhang.github.io/archives/e1a5c16b.html"/>
+
+
+
+
+
+  <title>數據浪潮帶來的數據革命 | 科技的旅程</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-115784236-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">科技的旅程</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">科技的大浪推著我們前進</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            標籤
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分類
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            歸檔
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://ericjhang.github.io">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Eric Jhang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="../uploads/IMG_5110.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="科技的旅程">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">數據浪潮帶來的數據革命</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-08-20T16:17:54+08:00">
+                2018-08-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="../categories/大數據/" itemprop="url" rel="index">
+                    <span itemprop="name">大數據</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="archives/e1a5c16b.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>筆者認為這波數據浪潮起源於2011年Google 啟動了一個專案<strong>Google Brain</strong>，這個項目是由著名的斯坦福大學機器學習教授Andrew Ng和在大規模計算機系統方面的世界頂尖專家Jeff Dean共同主導，<br>用16000個CPU Core的並行計算平台訓練一種稱為“深層神經網絡”（DNN ，Deep Neural Networks）的機器學習模型，在語音識別和圖像識別等領域獲得了巨大的成功。</p>
+<p>事實上機器學習的分支<strong>深度學習</strong>能有出類拔萃的效果有個重要的原因<br><strong>大量的學習數據</strong>在背後支持。而也因Google推動此項目讓整個世界認識到<br>數據的重要性。進而推動整個世界開始的盡可能地收集數據，產生一系列的變化。引發了這波數據浪潮推動數據革命。</p>
+<a id="more"></a>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>西元2011，全球開始掀起了一波數據的浪潮，以Google為首推出各式各樣的 科技應用開始影響你我的生活，在2016年AlphaGo 擊敗圍棋世界冠軍李世乭 震驚世界，靠的不是優異的演算法，而是大量的數據。人工智慧開始廣泛出 現我們的生活之中，臉部辨識作安全防護，用在醫療可以辨識乳癌或是骨折 協助醫生判斷。然而人工智慧的高速發展，可預期的是在未來會取代許多工 作，而在這可預見的未來我們又該如何面對?</p>
+<h2 id="快速了解數據與大數據是什麼"><a href="#快速了解數據與大數據是什麼" class="headerlink" title="快速了解數據與大數據是什麼"></a>快速了解數據與大數據是什麼</h2><p>在了解數據浪潮之間，先了解數據與大數據的定義。</p>
+<h4 id="數據"><a href="#數據" class="headerlink" title="數據"></a>數據</h4><ul>
+<li>數據是指對客觀事件進行記錄並可以鑑別的符號，是對客觀事物的性質、狀 態以及相互關係等進行記載的物理符號或這些物理符號的組合。它是可識別 的、抽象的符號</li>
+</ul>
+<h4 id="資訊"><a href="#資訊" class="headerlink" title="資訊"></a>資訊</h4><ul>
+<li>數據搭載資訊，可以拆解數據得到有用的資訊。</li>
+</ul>
+<h4 id="大數據"><a href="#大數據" class="headerlink" title="大數據"></a>大數據</h4><ul>
+<li>大數據的定義須滿足以下三個特性<ul>
+<li>資料量Volume</li>
+<li>多樣性Variety</li>
+<li>速度(即時性)Velocity<img src="/images/BIG-DATA.png" width="800" height="600" title="大數據的3V">
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>資料量Volume</strong> 有以下兩種說法:</p>
+<ul>
+<li>數據的數量必須足夠多，可以完整描述一個事件或是事物。</li>
+<li>數據量大到無法用傳統的資料儲存以及處理方法，通常這個量級會到PB規模以上</li>
+</ul>
+<p><strong>多樣性Variety</strong></p>
+<ul>
+<li>數據包含文字、影像、語音、搜尋行為等等</li>
+</ul>
+<p><strong>速度(即時性)Velocity</strong></p>
+<ul>
+<li>數據的傳輸速度，或是指數據的即時性，這個即時性端看各產業特性為主。</li>
+</ul>
+<h2 id="一張公開照片，讓日本人賺進大量財富"><a href="#一張公開照片，讓日本人賺進大量財富" class="headerlink" title="一張公開照片，讓日本人賺進大量財富"></a>一張公開照片，讓日本人賺進大量財富</h2><p>中國1959年9月26日發現大慶油田，該油田是中國第一大油田，蘊藏量更是當時世界前十大油田。大慶油田有效解決 中國國內的石油缺口，因此當時中國極力封鎖這個消息，保密做得非常好。 而在1964-1966年前後大慶油田產量提高，因此需要更多的設備跟煉油廠， 中國準備向全世界發出購買設備的需求，然而就當全世界對中國的大慶油田認識不足，要搶下訂單必須掌握以下兩個關鍵</p>
+<ul>
+<li>大慶油田位置</li>
+<li>大慶油田現在的產量? </li>
+</ul>
+<img src="/images/20150104015008363.jpg" width="800" height="600" title="鐵人王進喜站在鑽井機旁的著名照片">
+<p>就在各個競標廠商都在思考要如何獲得關鍵資訊時，日本的情報人員卻透過<br>上面這張照片，推敲出關鍵資訊。</p>
+<p>原來日本情報專家根據這張照片解開——大慶油田的秘密：<br> 1.分析出大慶油田位於齊齊哈爾與哈爾濱之間。<br> 2.通過照片中王進喜所握手柄的架式，推斷出油井的直徑。<br> 3.從王進喜所站的鑽井與背後油田間的距離和井架密度， 推斷出油田的大致儲量和產量。<br> 日本三菱重工透過此情報掌握中國的需求，因此打造出最 符合中國所要求的設計設備獲得中國的訂單，賺取了巨大的利潤。</p>
+<blockquote><p>一張照片可以隱藏的這麼多的資訊，這就是數據的力量。</p>
+</blockquote>
+<h2 id="數據是21世紀的石油"><a href="#數據是21世紀的石油" class="headerlink" title="數據是21世紀的石油"></a>數據是21世紀的石油</h2><p>掌握數據，就像擁有油田，然而要能夠將石油轉化成各種產品的能力也是至關重要的。以下透過幾個故事讓各位了解擁有數據以及解析數據能力能夠產生多大的力量。</p>
+<h3 id="百貨公司比你還了解你的家人"><a href="#百貨公司比你還了解你的家人" class="headerlink" title="百貨公司比你還了解你的家人"></a>百貨公司比你還了解你的家人</h3><p>美國知名百貨公司Target應用數據分析，發現懷孕的女性顧客他們購買的商品會有趨勢與一致性。反過來推測購買商品來預測女性顧客是否懷孕，進而發送孕婦專屬商品的折 價券給懷孕的顧客，大幅有效提升銷售率。<br>而也正是這套推薦系統引發了以下的故事</p>
+<p>有一天一名男子氣沖沖跑到百貨公司，手持著 Target 用電郵寄出的購物優惠券，但購物的內容卻已經有所預設﹕一些孕婦用品的優惠。那名男子原來是一少女的父親，因在其女兒的電郵信箱上收到 Target 寄來的優惠券，很不滿意地質問店員為何向他的女兒寄出如此有意圖的「鎖定式推廣」，其意思是否 Target鼓勵他的女兒嘗試懷孕？當下店長向該男子道歉，表示公司可能系統出錯，對其造成困擾表達歉意。 幾天後男子回到百貨公司，語帶愧疚地向店長道歉。原來她的女兒真的懷孕了，而Taget的推薦系統是根據她女兒的購買組合預測到可能該名顧客懷孕了，進而推薦。</p>
+<h3 id="GOOGLE翻譯團隊的第一次亮相，就讓世界震驚"><a href="#GOOGLE翻譯團隊的第一次亮相，就讓世界震驚" class="headerlink" title="GOOGLE翻譯團隊的第一次亮相，就讓世界震驚"></a>GOOGLE翻譯團隊的第一次亮相，就讓世界震驚</h3><p>  故事要從2005年的二月說起。美國國家標準與技術研究所舉辦的評鑑和交流會，<br>其中Google的機器翻譯團隊是第一次參加，其他的團隊不是過去曾經取得很好的成績，比如德國亞琛工學院，就是研究的歷史非常長。比如IBM和SYSTRAN，因此在測試前誰也沒關注Google團隊。<br>當年評鑑結果出來後，讓除了Google以外的所有人都大吃一驚，在所有四項評鑑中從來沒做過機器翻譯的Google，比其他研究團隊的系統領先了一大截</p>
+<img src="/images/翻譯成績.png" width="800" height="600" title="各團隊翻譯成績">
+<p>  在當時所有人都想知道Google的秘密武器到底是什麼。<br>原來Google用了大量的數據。當時科學家都清楚數據的重要性，但是在過去不同的研究組之間能使用的數據通常只相差兩三倍，對結果即便有影響也差不了多少。<br>但Google機器翻譯用的數據量卻是<strong>上萬倍的數據時，量變引發了質變</strong>。</p>
+<blockquote><p>數據的力量，擁有足夠多的高品質數據，就能夠引發質變，如同現在的人臉辨識。</p>
+</blockquote>
+<h3 id="亞馬遜的提高營收的秘密武器"><a href="#亞馬遜的提高營收的秘密武器" class="headerlink" title="亞馬遜的提高營收的秘密武器"></a>亞馬遜的提高營收的秘密武器</h3><p>亞馬遜擁有大量的客戶消費資訊，數據是21世紀的石油，他們自己有石油，也會提煉最終產生大量的收益<br>亞馬遜的商品推薦系統，能夠讓整體營收提高10-20個百分點，這個比例依照<br>亞馬遜2017年 電商營收2000億美元，提高10個百分點就是<strong>200億</strong>美元!!</p>
+<blockquote><p>數據是21世紀的石油，懂得挖掘石油，還要懂得提煉，就能夠帶來龐大的財富</p>
+</blockquote>
+<h3 id="我們該如何面對這波數據浪潮"><a href="#我們該如何面對這波數據浪潮" class="headerlink" title="我們該如何面對這波數據浪潮"></a>我們該如何面對這波數據浪潮</h3><p>數據浪潮掀起的數據革命可以媲美18世紀末的工業革命對人類帶來天翻地覆的影響。<br>而我們如果能夠正確認識數據的力量，學習解讀數據、應用數據，就能夠在這波浪潮之中找到立足點。<br>成為資料工程師/資料科學家都是一個不錯的職業，筆者認為學會分析數據的技能在未來肯定會是搶手的人才。</p>
+<h3 id="結尾"><a href="#結尾" class="headerlink" title="結尾"></a>結尾</h3><p>這波數據的浪潮的來臨好比十八世紀的工業大革命，會大幅改變人類的生活，對某些職業造成影響，然而卻也帶來更多的可能性。了解數據，認識數據能夠更好的讓這波浪潮推著我們前進。</p>
+<blockquote><p>這波數據浪潮僅是開始，將會持續影響我們的生活。</p>
+</blockquote>
+
+      
+    </div>
+	<div>    
+ 
+ 
+    <ul class="post-copyright">
+      <li class="post-copyright-author">
+          <strong>作者：</strong>Eric Jhang
+      </li>
+      <li class="post-copyright-link">
+        <strong>文章連結：</strong>
+        <a href="" title="數據浪潮帶來的數據革命">archives/e1a5c16b.html</a>
+      </li>
+      <li class="post-copyright-license">
+        <strong>版權聲明： </strong>
+        本網誌所有文章除特別聲明外,均採用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh_TW" rel="external nofollow" target="_blank">CC BY-NC-ND 4.0</a> 許可協議。轉載請註明出處!
+      </li>
+    </ul>
+  
+</div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="../tags/大數據-數據浪潮/" rel="tag"># 大數據 數據浪潮</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="dad03d64.html" rel="next" title="輕鬆學會網路爬蟲，教你用Python爬蟲爬大樂透">
+                <i class="fa fa-chevron-left"></i> 輕鬆學會網路爬蟲，教你用Python爬蟲爬大樂透
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="../uploads/IMG_5110.png"
+                alt="Eric Jhang" />
+            
+              <p class="site-author-name" itemprop="name">Eric Jhang</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="../archives/">
+              
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">文章</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="../categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分類</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="../tags/index.html">
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">標籤</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/EricJhang" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:artopllting@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#快速了解數據與大數據是什麼"><span class="nav-number">2.</span> <span class="nav-text">快速了解數據與大數據是什麼</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#數據"><span class="nav-number">2.0.1.</span> <span class="nav-text">數據</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#資訊"><span class="nav-number">2.0.2.</span> <span class="nav-text">資訊</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#大數據"><span class="nav-number">2.0.3.</span> <span class="nav-text">大數據</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一張公開照片，讓日本人賺進大量財富"><span class="nav-number">3.</span> <span class="nav-text">一張公開照片，讓日本人賺進大量財富</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#數據是21世紀的石油"><span class="nav-number">4.</span> <span class="nav-text">數據是21世紀的石油</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#百貨公司比你還了解你的家人"><span class="nav-number">4.1.</span> <span class="nav-text">百貨公司比你還了解你的家人</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GOOGLE翻譯團隊的第一次亮相，就讓世界震驚"><span class="nav-number">4.2.</span> <span class="nav-text">GOOGLE翻譯團隊的第一次亮相，就讓世界震驚</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#亞馬遜的提高營收的秘密武器"><span class="nav-number">4.3.</span> <span class="nav-text">亞馬遜的提高營收的秘密武器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#我們該如何面對這波數據浪潮"><span class="nav-number">4.4.</span> <span class="nav-text">我們該如何面對這波數據浪潮</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#結尾"><span class="nav-number">4.5.</span> <span class="nav-text">結尾</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Eric Jhang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 強力驅動</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主題 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="../lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="../lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="../lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="../lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="../lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="../lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="../js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="../js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="../js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="../js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="../js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="../js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="../js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://ericmessage.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://ericjhang.github.io/archives/e1a5c16b.html';
+          this.page.identifier = 'archives/e1a5c16b.html';
+          this.page.title = '數據浪潮帶來的數據革命';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://ericmessage.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
